@@ -81,7 +81,16 @@ def main():
 
     for doc_id, nombre in sorted(registro):
         print(f"Documento {doc_id}: {nombre}")
-    print("\n")
 
+    # verificación
+    ids = [doc_id for doc_id, nombre in registro]
+
+    print("\n========== VERIFICACION ==========")
+
+    print("Total correcto:", total == 24)
+    print("Sin documentos repetidos:", len(ids) == len(set(ids)))
+    print("Todos los documentos procesados:", set(ids) == set(range(1, 25)))
+    print("\n")
+    
 if __name__ == "__main__":
     main()
